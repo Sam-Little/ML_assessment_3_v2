@@ -21,6 +21,7 @@ Clone the Repository
 git clone https://github.com/Sam-Little/ML_assessment_3_v2.git
 cd ML_assessment_3_v2
 
+Work Flow: 
 Prepare the Data
 Ensure the raw dataset (StudentPerformanceFactors.csv) is located in:
 data/raw/StudentPerformanceFactors.csv
@@ -32,7 +33,7 @@ python src/preprocessing/preprocess_data.py
 Output: Processed dataset saved to:data/processed/processed_data.csv
 
 Split the Data:
-python src/splits/split_data.py
+python data/splits/split_data.py
 Output: Training and testing splits saved to:data/splits/data_splits.pkl
 
 Train Models: Train both models (Linear Regression and Random Forest):
@@ -47,11 +48,8 @@ Evaluate Models:
 python src/evaluation/evaluate_models.py
 Output: Evaluation metrics (e.g., Mean Squared Error, R-squared) printed in the terminal.
 
-Visualize Results:
-python src/visualization/compare_models.py
-Output: Visual comparison of model performance (bar charts for MSE and R-squared).
 
-Explore the Data and Results Open the Jupyter Notebooks for detailed analysis and visualizations:
+Explore the Data and Results Open the Jupyter Notebooks for analysis and visualizations:
 jupyter notebook notebooks/EDA.ipynb
 jupyter notebook notebooks/evaluate_models.ipynb
 
@@ -90,4 +88,4 @@ ML_assessment_3_v2/
 
 
 
-
+Contact Details: sam.little@opit.students.com
