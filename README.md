@@ -5,6 +5,61 @@ This project aims to create a machine learning model to predict student exam sco
 
 Additionally, this project includes visualizations and analyses, such as correlations and relationships between features like hours studied, tutoring sessions, and motivation.
 
+Setup Instructions
+Follow these steps to set up and run the project:
+
+Prerequisites
+Python 3.8 or higher.
+Install Jupyter Notebook (optional but recommended).
+Install required libraries:
+
+pip install -r requirements.txt
+Run the Project
+
+Clone the Repository
+
+git clone https://github.com/Sam-Little/ML_assessment_3_v2.git
+cd ML_assessment_3_v2
+
+Prepare the Data
+Ensure the raw dataset (StudentPerformanceFactors.csv) is located in:
+data/raw/StudentPerformanceFactors.csv
+
+Run the Full Workflow Run the following scripts in sequence to see the full workflow:
+
+Preprocess the Data:
+python src/preprocessing/preprocess_data.py
+Output: Processed dataset saved to:data/processed/processed_data.csv
+
+Split the Data:
+python src/splits/split_data.py
+Output: Training and testing splits saved to:data/splits/data_splits.pkl
+
+Train Models: Train both models (Linear Regression and Random Forest):
+python src/training/train_linear_regression.py
+python src/training/train_random_forest.py
+Output:
+models/linear_model.pkl: Trained Linear Regression model.
+models/random_forest_model.pkl: Trained Random Forest model.
+
+
+Evaluate Models:
+python src/evaluation/evaluate_models.py
+Output: Evaluation metrics (e.g., Mean Squared Error, R-squared) printed in the terminal.
+
+Visualize Results:
+python src/visualization/compare_models.py
+Output: Visual comparison of model performance (bar charts for MSE and R-squared).
+
+Explore the Data and Results Open the Jupyter Notebooks for detailed analysis and visualizations:
+jupyter notebook notebooks/EDA.ipynb
+jupyter notebook notebooks/evaluate_models.ipynb
+
+
+
+
+
+
 Directory Structure
 The project is organized as follows:
 
@@ -36,54 +91,3 @@ ML_assessment_3_v2/
 
 
 
-
-Setup Instructions
-Follow these steps to set up and run the project:
-
-Prerequisites
-Python 3.8 or higher
-Required libraries (see requirements.txt)
-
-Steps
-
-Clone the Repository
-
-git clone https://github.com/Sam-Little/ML_assessment_3_v2.git
-
-cd ML_assessment_3_v2
-
-Set Up the Environment
-
-Install required Python libraries:
-pip install -r requirements.txt
-
-Prepare the Data
-Place the dataset (StudentPerformanceFactors.csv) in the data/raw/ directory.
-
-Usage Instructions
-Run the following scripts in order to preprocess the data, train the model, and evaluate its performance.
-
-Preprocess Data
-Prepares the dataset for training by handling missing values and performing feature transformations.
-python src/preprocessing/preprocess_data.py
-Output: A processed dataset saved in data/processed/processed_data.csv.
-
-Train the Model
-Trains a machine learning model using the preprocessed dataset.
-python src/training/train_model.py
-Output: A trained model saved as models/trained_model.pkl.
-
-Evaluate the Model
-Evaluates the trained model on the dataset.
-python src/evaluation/evaluate_model.py
-Output: Metrics like Mean Squared Error (MSE) and R-squared value.
-
-Explore the Data
-Use the exploratory notebook for data analysis and visualization.
-jupyter notebook notebooks/exploratory_analysis.ipynb
-
-Project Goals
-Identify and understand key factors influencing student performance.
-Build a predictive model for exam scores.
-
-Contact information: sam.little@students.opit.com
