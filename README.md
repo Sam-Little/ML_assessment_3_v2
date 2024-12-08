@@ -82,3 +82,4 @@ Project Goals
 Identify and understand key factors influencing student performance.
 Build a predictive model for exam scores.
 
+Contact information: sam.little@students.opit.com
