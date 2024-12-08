@@ -9,28 +9,32 @@ Directory Structure
 The project is organized as follows:
 
 
-student_performance_prediction/
+ML_assessment_3_v2/
 ├── data/
+│   ├── processed/          # Contains preprocessed data
+│   │   └── processed_data.csv
 │   ├── raw/                # Contains the original dataset
 │   │   └── StudentPerformanceFactors.csv
-│   ├── processed/          # Contains preprocessed data
-├── src/
-│   ├── preprocessing/      # Scripts for data preprocessing
-│   │   └── preprocess_data.py
-│   ├── training/           # Scripts for model training
-│   │   └── train_model.py
-│   ├── evaluation/         # Scripts for model evaluation
-│   │   └── evaluate_model.py
-├── notebooks/              # Jupyter notebook(s) for exploratory analysis
-│   └── exploratory_analysis.ipynb
+│   ├── splits/             # Contains train/test splits
+│       └── data_splits.pkl
 ├── models/                 # Saved machine learning models
-│   └── trained_model.pkl
-├── docs/                   # Additional documentation
-│   └── project_documentation.md
-├                 
+│   ├── linear_model.pkl    # Trained Linear Regression model
+│   └── random_forest_model.pkl # Trained Random Forest model
+├── notebooks/              # Jupyter notebook(s) for analysis and evaluation
+│   ├── EDA.ipynb           # Exploratory Data Analysis
+│   └── evaluate_models.ipynb # Model evaluation and visualization
+├── src/                    # Source code for the project
+│   ├── evaluation/         # Scripts for model evaluation
+│   ├── preprocessing/      # Scripts for data preprocessing
+│   ├── training/           # Scripts for training models
+│   │   ├── train_linear_regression.py # Linear Regression training
+│   │   └── train_random_forest.py    # Random Forest training
+├── .gitignore              # Files and directories to ignore in Git
 ├── README.md               # Project overview and instructions
 ├── requirements.txt        # Required dependencies
-├── .gitignore              # Files and directories to ignore in Git
+
+
+
 
 
 Setup Instructions
@@ -44,7 +48,7 @@ Steps
 
 Clone the Repository
 
-git clone https://github.com/your-username/ML_assessment_3_v2.git
+git clone https://github.com/Sam-Little/ML_assessment_3_v2.git
 
 cd ML_assessment_3_v2
 
