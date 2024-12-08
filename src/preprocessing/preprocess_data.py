@@ -1,6 +1,6 @@
 import pandas as pd
 
-file_path = 'C:/Users/Admin/ML_assessment_3_v2/data/raw/StudentPerformanceFactors.csv'
+file_path = r'C:\Users\Admin\ML_assessment_3_v2\data\raw\StudentPerformanceFactors.csv'
 
 
 
@@ -16,17 +16,17 @@ def load_data(file_path):
 
 def preprocess_data(data):
     """
-    Preprocess the dataset by handling missing values.
+    Preprocess the dataset by handling missing values and encoding categorical variables.
     Parameters:
         data (pd.DataFrame): Raw dataset.
     Returns:
         pd.DataFrame: Preprocessed dataset.
     """
-    # Handle missing values by filling with column means
-    data = data.fillna(data.mean())
+    # Handle missing values: Only fill missing values in numeric columns
+    numeric_columns = data.select_dtypes(include=['number']).columns
+    data[numeric_columns] = data[numeric_columns].fillna(data[numeric_columns].mean())
     
-    # Additional preprocessing can be added here
-    # Example: Encoding categorical variables
+    # Encode categorical variables
     categorical_columns = data.select_dtypes(include=['object']).columns
     for col in categorical_columns:
         data[col] = data[col].astype('category').cat.codes  # Convert to numeric codes
@@ -35,8 +35,8 @@ def preprocess_data(data):
 
 if __name__ == "__main__":
     # Define file paths
-    input_file_path = "../../data/raw/StudentPerformanceFactors.csv"
-    output_file_path = "../../data/processed/processed_data.csv"
+    input_file_path = r'C:\Users\Admin\ML_assessment_3_v2\data\raw\StudentPerformanceFactors.csv'
+    output_file_path = r'C:\Users\Admin\ML_assessment_3_v2\data\processed\processed_data.csv'
 
     # Load the data
     print("Loading data...")
