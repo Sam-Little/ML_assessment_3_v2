@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     # Display the first few rows for inspection
     print("Raw data sample:")
-    print(raw_data.head())
+    print(raw_data.head(10))
 
     # Preprocess the data
     print("Preprocessing data...")
@@ -54,4 +54,4 @@ if __name__ == "__main__":
     print(f"Saving preprocessed data to {output_file_path}...")
     processed_data.to_csv(output_file_path, index=False)
 
-    print("Data preprocessing complete!")
+    print("Data preprocessing complete! The processed data is now save in the folder")
